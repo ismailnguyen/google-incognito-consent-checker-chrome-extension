@@ -1,17 +1,23 @@
 var checkConsents = function () {
-	if (!document) return;
+	if (!document || !document.location || !document.location.origin) return;
 		
-	// youtube homepage 
-	if (document.querySelector('*[aria-label^="Agree"]'))
-		document.querySelector('*[aria-label^="Agree"]').click();
+	// Youtube
+	if (document.location.origin.indexOf('youtube.com') > -1) {
+		// Homepage
+		if (document.querySelector('*[aria-label^="Agree"]'))
+			document.querySelector('*[aria-label^="Agree"]').click();
 
-	// youtube video page
-	if (document.querySelector('*[aria-label^="No"]'))
-		document.querySelector('*[aria-label^="No"]').click();
-
-	// google search page
-	if (document.getElementById('zV9nZe'))
-		document.getElementById('zV9nZe').click();
+		// Video page
+		if (document.querySelector('*[aria-label^="No"]'))
+			document.querySelector('*[aria-label^="No"]').click();
+	}
+		
+	// Google
+	if (document.location.origin.indexOf('google.com') > -1) {
+		// Search page
+		if (document.getElementById('zV9nZe'))
+			document.getElementById('zV9nZe').click();
+	}	
 }
 
 window.addEventListener('load', (event) => {
