@@ -10,8 +10,8 @@ var checkConsents = function () {
 			document.querySelector('*[aria-label^="Agree"]').click();
 
 		// Video page
-		if (document.querySelector('*[aria-label^="No"]'))
-			document.querySelector('*[aria-label^="No"]').click();
+		if (document.querySelector('*[aria-label^="No "]'))
+			document.querySelector('*[aria-label^="No "]').click();
 	}
 		
 	// Google
